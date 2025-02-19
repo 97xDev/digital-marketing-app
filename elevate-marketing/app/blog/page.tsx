@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import posts from "@/lib/blogData.json";
 
 export default function Blog() {
@@ -13,10 +14,12 @@ export default function Blog() {
             key={post.id}
             className="flex flex-col justify-stretch bg-gray-800 rounded-lg shadow-lg overflow-hidden p-4"
           >
-            <img
+            <Image
               src={post.image}
               alt={post.title}
-              className="w-full h-48 object-cover"
+              width={600}
+              height={300}
+              className="w-full h-80 object-cover"
             />
             <h2 className="text-xl font-bold mt-4">{post.title}</h2>
             <p className="text-gray-400 mt-2">{post.subtitle}</p>
